@@ -37,3 +37,21 @@ passport.deserializeUser(function(id, done) {
         return done(null, emp);
     })
 });
+
+// checks if the user is authenticated
+passport.checkAuthentication =  function(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    return res.redirect('/sign-in');
+}
+
+// sets the user information to the response locals object if the user is authenticated
+passport.setAuthentication = function(req, res, next) {
+    if (req.isAuthenticated()) {
+        res.locals.emp = req.emp;
+    }
+    next();
+}
+
+module.exports = passport;
