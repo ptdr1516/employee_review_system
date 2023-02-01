@@ -35,7 +35,7 @@ module.exports.create = async function(req, res) {
 
     Employee.findOne({ email: req.body.email }, function(err, emp) {
         if (err) {
-            console.log('Error in finding user');
+            console.log('Error in finding the user');
             return;
         }
         if (!emp) {
@@ -65,6 +65,66 @@ module.exports.create = async function(req, res) {
         else {
             console.log('Employee Exists');
             return res.render('emp_sign_in');
+        }
+    })
+}
+
+module.exports.add = async function(req, res) {
+    if (req.body.password != req.body.confirmPassword) {
+        return res.redirect('back');
+    }
+
+    Employee.findOne({ email: req.body.email }, function(err, emp) {
+        if (err) {
+            console.log('Error in finding the user');
+            return;
+        }
+        if (!emp) {
+            Employee.create(req.body, async function(err, emp) {
+                if (err) {
+                    console.log('Error in creating the user', err);
+                    return;
+                }
+                Employee.count({}, async function(err, count) {
+                    console.log('Number of Employees: '+ count);
+                    if (count == 1) {
+                        emp.isAdmin = "true";
+                        await emp.save();
+                        console.log('Promoted as admin');
+                    }
+                    else {
+                        emp.isAdmin = "false";
+                        await emp.save();
+                        console.log('Promoted as employee');
+                    }
+                });
+                console.log('Employee created successfully');
+
+                Employee.find({}, function(err, emp) {
+                    console.log(emp);
+                    if (err) {
+                        console.log('Error in finding the employee');
+                        return;
+                    }
+                return res.render('all_emp', {
+                    emps: emp
+                });
+            })
+        })
+    }
+    else {
+            console.log('Employee Exists');
+            Employee.find({}, function(err, emp) {
+                console.log(emp);
+                if (err) {
+                    console.log('Error in finding the employee');
+                    return;
+                }
+                return res.render('all_emp', {
+                    emps: emp
+                });
+            })
+            
         }
     })
 }
