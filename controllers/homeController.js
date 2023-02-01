@@ -1,4 +1,4 @@
-const { request } = require('express');
+const { request, response } = require('express');
 const express = require('express');
 const Employee = require('../models/employee');
 
@@ -222,4 +222,38 @@ module.exports.assignReview = function(req, res) {
         console.log(emp);
         return res.redirect('back');
     });
+}
+
+module.exports.addReview = function(req, res) {
+    console.log(req.body);
+    Employee.findOne({ email: req.body.toemail }, async function(err, emp){
+        if (err) {
+            console.log('Error in finding the user');
+            return;
+        }
+        else {
+            let review = {
+                'from': req.body.fromname,
+                'message': req.body.feedback,
+            }
+            emp.myReviews.push(review);
+            await emp.save();
+            console.log(emp);
+        }
+    });
+    return response.redirect('back');
+}
+
+module.exports.deleteEmployee = function(req, res) {
+    Employee.findById(req.params.id, function(err, emp) {
+        if (err) {
+            console.log('Unable to find employee');
+            return;
+        }
+        else {
+            emp.remove();
+            console.log('Employee removed successfully');
+            return res.redirect('back');
+        }
+    })
 }
