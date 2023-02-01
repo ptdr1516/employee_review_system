@@ -169,3 +169,14 @@ module.exports.addEmp = function(req, res) {
     })
 }
 
+module.exports.assignWork = function(req, res) {
+    Employee.find({}, function(err, emp) {
+        if (err) {
+            console.log('Error in finding the employee');
+            return;
+        }
+        return res.render('assign_work', {
+            emp: emp
+        });
+    })
+}
