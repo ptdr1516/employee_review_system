@@ -9,7 +9,7 @@ const passportLocal = require('./config/passport-local-strategy');
 
 
 const port = 8000;
-const app = express.Router();
+const app = express();
 
 //adds middleware to the exp app, which is used to parse the incoming request data in the body of an HTTP post request. The "bodyparser.urlencoded" function is used to parse incoming request bodies in a middleware before your handlers.
 app.use(bodyparser.urlencoded({ extended: false }));
