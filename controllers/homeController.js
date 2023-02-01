@@ -1,3 +1,4 @@
+const { request } = require('express');
 const express = require('express');
 const Employee = require('../models/employee');
 
@@ -128,3 +129,17 @@ module.exports.add = async function(req, res) {
         }
     })
 }
+
+module.exports.createSession = function(req, res) {
+    return res.redirect('/');
+}
+
+module.exports.destroySession = function(req, res, next) {
+    req.logout(function(err) {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/');
+    });
+}
+
