@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const MongoStore = require('connect-mongo')
+const passportLocal = require('./config/passport-local-strategy');
 
 
 const port = 8000;
