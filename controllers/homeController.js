@@ -18,3 +18,12 @@ module.exports.signin = function(req, res) {
         return res.render('emp_sign_in');
     }
 }
+
+module.exports.signup = function(req, res) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/');
+    }
+    else {
+        return res.render('emp_sign_up');
+    }
+}
