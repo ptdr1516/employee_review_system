@@ -195,3 +195,31 @@ module.exports.updateStatus = function(req, res) {
     });
 }
 
+module.exports.assignReview = function(req, res) {
+    console.log(req.body);
+    let recipient = req.body.recipient.split(",");
+    let recipientName = recipient[0];
+    let recipientEmail = recipient[1];
+    let reviewerR = req.body.reviewer;
+
+    console.log(recipientName, recipientEmail, reviewerR);
+
+    Employee.findOne({ email: req.body.reviewer }, async function(err, emp) {
+        if (err) {
+            console.log('Error in finding the user');
+            return;
+        }
+
+        let review = emp.review;
+
+        let temp = {
+            'empname': recipientName,
+            'empemail': recipientEmail,
+        }
+
+        review.push(temp);
+        await emp.save();
+        console.log(emp);
+        return res.redirect('back');
+    });
+}
