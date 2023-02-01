@@ -143,3 +143,29 @@ module.exports.destroySession = function(req, res, next) {
     });
 }
 
+module.exports.showEmp = function(req, res) {
+    Employee.find({}, function(err, emp) {
+        console.log(emp);
+        if (err) {
+            console.log('Error in finding the employee');
+            return;
+        }
+        return res.render('all_emp', {
+            emps: emp
+        });
+    })
+}
+
+module.exports.addEmp = function(req, res) {
+    Employee.find({}, function(err, emp) {
+        console.log(emp);
+        if (err) {
+            console.log('Error in adding the employee');
+            return;
+        }
+        return res.render('add_emp', {
+            emps: emp
+        });
+    })
+}
+
