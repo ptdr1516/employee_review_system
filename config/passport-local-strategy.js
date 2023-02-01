@@ -20,3 +20,20 @@ function(email, password, done) {
         return done(null, emp);
     });
 }));
+
+// stores the authenticated user's information in a session.
+passport.serializeUser(function(emp, done) {
+    done(null, emp.id);
+});
+
+// used to retrieve the user's information from a database or other storage system using the user's unique identifier.
+passport.deserializeUser(function(id, done) {
+    Employee.findById(id, function(err, emp) {
+        if (err) {
+            console.log('Error in finding the user');
+            return done(err);
+        }
+
+        return done(null, emp);
+    })
+});
