@@ -180,3 +180,18 @@ module.exports.assignWork = function(req, res) {
         });
     })
 }
+
+module.exports.updateStatus = function(req, res) {
+    console.log('req.body');
+
+    Employee.findOne({ email: req.body.email },async function(err, emp) {
+        if (err) {
+            console.log('Error in finding the user');
+            return;
+        }
+        emp.isAdmin = "true";
+        await emp.save();
+        return res.redirect('back');
+    });
+}
+
