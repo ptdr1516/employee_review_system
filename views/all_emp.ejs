@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <%- include('_headera', {emp:emps}); %>
+    <h1 style="text-align: center;">All Employee List</h1>
+    <table class="emp-table">
+        <div class="emp-header">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Admin</th>
+                <th>Delete Button</th>
+            </tr>
+        </div>
+        <% for(let e of emps) {%>
+            <div class="emp-details">
+                <tr>
+                    <td>
+                        <%= e.name %>
+                    </td>
+                    <td>
+                        <%= e.email %>
+                    </td>
+                    <td>
+                        <%= e.password %>
+                    </td>
+                    <td>
+                        <%= e.isAdmin %>
+                    </td>
+                    <td><a href="/delete/<%= e.id %>"><button style="background-color: red;">Delete</button></a></td>
+                </tr>
+            </div>
+            <% } %>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+</body>
+</html>
