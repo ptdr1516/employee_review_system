@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a4373f-d0c1-4b77-8c41-9861d6932d9d" name="Changes" comment="" />
+    <list default="true" id="97a4373f-d0c1-4b77-8c41-9861d6932d9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/homeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/homeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/all_emp.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/all_emp.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assign_work.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/assign_work.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +18,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LAkK0sHTX1MxTahUelUY5uO1Mh" />
   <component name="ProjectViewState">
@@ -21,6 +33,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Ptdr/Downloads/Compressed/employee-review-system-main_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -33,6 +50,8 @@
       <option name="presentableId" value="Default" />
       <updated>1675321208533</updated>
       <workItem from="1675321210600" duration="43000" />
+      <workItem from="1675413183218" duration="238000" />
+      <workItem from="1675415732056" duration="1225000" />
     </task>
     <servers />
   </component>

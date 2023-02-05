@@ -241,7 +241,7 @@ module.exports.addReview = function(req, res) {
             console.log(emp);
         }
     });
-    return response.redirect('back');
+    return res.redirect('back');
 }
 
 module.exports.deleteEmployee = function(req, res) {

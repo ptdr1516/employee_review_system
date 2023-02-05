@@ -1,0 +1,92 @@
+.home-container{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.review{
+    border: 1px solid black;
+    margin: 10px;
+    width: 45%;
+    min-height: 250px;
+}
+.heading{
+    background-color: rgb(4, 4, 66);
+    color: white;
+    text-align: center;
+}
+.addreview{
+    width: 40%;
+    margin: 10px;
+}
+.feedback{
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.from{
+    font-size: larger;
+    font-weight: 600;
+}
+
+.login-container{
+    display: flex;
+    width: 60%;
+    margin: 50px auto;
+    border: 2px solid black;
+    padding: 20px;
+    flex-direction: column;
+    
+    background-color: aliceblue;
+}
+.emp-table{
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    width: 80%;
+    padding: 5px;
+
+}
+.emp-table td{
+   padding: 10px;
+}
+.emp-table th{
+    padding: 10px;
+ }
+ .assignWork{
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-around;
+    
+ }
+ .work-heading{
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 20px;
+ }
+ .assignW{
+    border: 1px solid black;
+    width: 48%;
+    padding: 20px;
+ }
+ .headingA{
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+ }
